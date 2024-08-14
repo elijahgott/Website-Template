@@ -9,35 +9,45 @@
     --background-color: rgb(255, 255, 255);
     --text-color: rgb(0, 0, 0);
     --deemphasized-text-color: rgb(90, 90, 90);
-    --button-color: rgb(255, 0, 85);
+    --button-color: rgb(192,0,255);;
+    --home-image-background: linear-gradient(90deg, rgba(192,0,255,1) 0%, rgba(180,0,255,1) 35%, rgba(0,212,255,1) 100%);
     --fonts: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
     --font-size-main: 20px;
-    --font-size-nav: 28px;
+    --font-size-nav: 24px;
 }
 
 /* GENERAL CLASSES */
+/* emphase text - make bold & underline */
 .emphasize{
     color: var(--text-color);
     font-weight: bold;
     text-decoration: underline;
 }
 
+/* deemphasize text - make text lighter */
 .deemphasize{
     color: var(--deemphasized-text-color);
 }
 
+/* separate sections with extra spacing */
 .section{
     padding-top: 32px;
     padding-bottom: 32px;
 }
 
+/* puts borders around section / text / whatever else */
 .border{
-    border: 2px solid black;
+    border: 2px solid rgb(83, 83, 83);
     border-radius: 16px;
     margin-left: 10%;
     margin-right: 10%;
     padding: 24px;
     box-shadow: 4px 4px 5px gray;
+}
+
+/* gets rid of extra space above titles within a border */
+.border > h1, h2, h3, h4, h5{
+    margin-top: 0;
 }
 
 /* maybe too much space between consecutive buttons */
@@ -46,13 +56,14 @@
     border-radius: 15px;
     background: var(--button-color);
     color: var(--background-color);
+    font-size: 20px;
     font-weight: bold;
     text-decoration: none;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    padding-left: 12px;
-    padding-right: 12px;
-    margin-left: 4px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: 8px;
     box-shadow: 4px 4px 5px gray;
 }
 
@@ -62,6 +73,27 @@
     margin-right: auto;
     width: 85%;
     max-width: 1920px;
+}
+
+/* big picture thing on home page */
+.home-image{
+    display: flex;
+    width: 90%;
+    height: 30rem;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--home-image-background);
+}
+
+/* text that goes inside of the home image */
+.home-image-text{
+    color: white;
+    font-size: 120px;
+    margin: 0;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* general, whole page */
@@ -93,7 +125,7 @@ nav > ul{
     padding-left: 0;
     margin-left: auto;
     margin-right: auto;
-    width: 85%;
+    width: 90%;
     max-width: 1920px;
 }
 
@@ -106,7 +138,12 @@ nav > ul > li{
 nav > ul > li > a{
     color: var(--text-color);
     font-weight: bolder;
-    /* text-decoration: none; */
+    text-decoration: none;
+}
+
+/* nav links when hovered over */
+nav > ul > li > a:hover{
+    text-decoration: underline;
 }
 
 /* sign up and log in */
